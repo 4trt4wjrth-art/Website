@@ -418,7 +418,23 @@ gap:20px;
 </head>
 
 <body>
+<div id="gate">
+  <h1>Verification Code</h1>
 
+  <p>Enter your access key.</p>
+
+  <input
+    type="password"
+    id="key"
+    placeholder="XXXX-XXXX-XXXX-XXXX">
+
+  <button onclick="unlock()">
+    Continue
+  </button>
+
+  <div id="error"></div>
+</div>
+<div id="content">
 <header>
 
 <div class="logo">
@@ -514,7 +530,22 @@ aalborguniversity.dk
 </div>
 
 </footer>
+<script>
+const correctKey = "A8X4-K9Q2-M7P1-V6RD-T3LW";
 
+function unlock() {
+    const entered = document.getElementById("key").value.trim();
+
+    if (entered === correctKey) {
+        document.getElementById("gate").style.display = "none";
+        document.getElementById("content").style.display = "block";
+        document.getElementById("error").innerHTML = "";
+    } else {
+        document.getElementById("error").innerHTML = "Invalid access key.";
+    }
+}
+</script>
+
+</div>
 </body>
-
 </html>
