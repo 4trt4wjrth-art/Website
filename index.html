@@ -1,601 +1,645 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Verification</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Inter,sans-serif;
-}
-
-body{
-
-background:#f6f7fb;
-color:#222;
-overflow-x:hidden;
-
-}
-
-/* Background */
-
-body:before{
-
-content:"";
-position:fixed;
-left:-300px;
-top:120px;
-width:700px;
-height:900px;
-
-background:
-radial-gradient(circle at left,#eceffc 0%,transparent 70%);
-
-opacity:.8;
-z-index:-2;
-
-}
-
-body:after{
-
-content:"";
-position:fixed;
-right:-300px;
-top:120px;
-width:700px;
-height:900px;
-
-background:
-radial-gradient(circle at right,#eceffc 0%,transparent 70%);
-
-opacity:.8;
-z-index:-2;
-
-}
-
-/* Header */
-
-header{
-
-height:110px;
-background:#11184b;
-
-display:flex;
-align-items:center;
-justify-content:space-between;
-
-padding:0 70px;
-
-color:white;
-
-}
-
-.logo{
-
-font-size:20px;
-font-weight:800;
-
-letter-spacing:6px;
-line-height:1.4;
-
-}
-
-.tag{
-
-font-size:18px;
-font-weight:400;
-
-opacity:.95;
-
-}
-
-/* Card */
-
-.wrapper{
-
-padding:60px 20px;
-
-}
-
-.card{
-
-background:white;
-
-max-width:950px;
-
-margin:auto;
-
-padding:70px;
-
-border-radius:18px;
-
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-
-text-align:center;
-
-border:1px solid #e8ebf3;
-
-}
-
-.uni{
-
-font-size:20px;
-
-font-weight:700;
-
-letter-spacing:6px;
-
-color:#162057;
-
-margin-bottom:22px;
-
-}
-
-.title{
-
-font-size:72px;
-
-font-weight:800;
-
-color:#162057;
-
-margin-bottom:25px;
-
-}
-
-.divider{
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-margin:25px 0 40px;
-
-}
-
-.divider:before,
-.divider:after{
-
-content:"";
-
-width:180px;
-
-height:2px;
-
-background:#1d2a73;
-
-}
-
-.dot{
-
-width:14px;
-
-height:14px;
-
-background:#1d2a73;
-
-border-radius:50%;
-
-margin:0 14px;
-
-}
-
-.desc{
-
-font-size:22px;
-
-line-height:1.7;
-
-max-width:700px;
-
-margin:auto;
-
-color:#444;
-
-margin-bottom:40px;
-
-}
-
-/* Success */
-
-.success{
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-gap:18px;
-
-background:#edf9ee;
-
-border:1px solid #d7ead8;
-
-padding:22px;
-
-border-radius:12px;
-
-font-size:28px;
-
-font-weight:600;
-
-color:#2b8a3e;
-
-max-width:620px;
-
-margin:auto;
-
-}
-
-.check{
-
-width:48px;
-
-height:48px;
-
-border-radius:50%;
-
-background:#2d8b3d;
-
-color:white;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-font-size:28px;
-
-font-weight:bold;
-
-}
-
-.line{
-
-margin:42px auto;
-
-height:1px;
-
-background:#ddd;
-
-width:620px;
-
-max-width:100%;
-
-}
-
-.bottom{
-
-font-size:22px;
-
-line-height:1.8;
-
-color:#444;
-
-}
-
-/* Footer */
-
-footer{
-
-margin-top:60px;
-
-background:#11184b;
-
-color:white;
-
-padding:38px 70px;
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:flex-end;
-
-flex-wrap:wrap;
-
-}
-
-.left h2{
-
-font-size:18px;
-
-margin-bottom:10px;
-
-}
-
-.left p{
-
-font-size:15px;
-
-opacity:.9;
-
-line-height:1.7;
-
-}
-
-.right{
-
-font-size:18px;
-
-font-weight:600;
-
-}
-
-/* Mobile */
-
-@media(max-width:768px){
-
-header{
-
-padding:25px;
-
-height:auto;
-
-flex-direction:column;
-
-gap:12px;
-
-text-align:center;
-
-}
-
-.logo{
-
-font-size:16px;
-
-letter-spacing:4px;
-
-}
-
-.tag{
-
-font-size:14px;
-
-}
-
-.card{
-
-padding:40px 25px;
-
-}
-
-.title{
-
-font-size:46px;
-
-}
-
-.desc{
-
-font-size:18px;
-
-}
-
-.success{
-
-font-size:20px;
-
-padding:18px;
-
-}
-
-.bottom{
-
-font-size:18px;
-
-}
-
-footer{
-
-padding:30px;
-
-text-align:center;
-
-justify-content:center;
-
-gap:20px;
-
-}
-
-}
-
-#gate{
-    max-width:420px;
-    margin:100px auto;
-    padding:40px;
-    background:white;
-    border-radius:16px;
-    text-align:center;
-    box-shadow:0 10px 30px rgba(0,0,0,.15);
-}
-
-#gate h1{
-    color:#162057;
-    margin-bottom:15px;
-}
-
-#gate p{
-    color:#666;
-    margin-bottom:20px;
-}
-
-#gate input{
-    width:100%;
-    padding:14px;
-    font-size:18px;
-    border:1px solid #ccc;
-    border-radius:8px;
-    text-align:center;
-    margin-bottom:20px;
-}
-
-#gate button{
-    width:100%;
-    padding:14px;
-    font-size:18px;
-    background:#162057;
-    color:white;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-}
-
-#error{
-    color:red;
-    margin-top:15px;
-}
-
-#content{
-    display:none;
-}
-
-</style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Record Verification | Aalborg University</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f4f6f9;
+      color: #1a1a1a;
+      line-height: 1.5;
+      min-height: 100vh;
+    }
+
+    /* ========== GATE ========== */
+    #gate {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: #f4f6f9;
+    }
+
+    .gate-card {
+      background: white;
+      width: 100%;
+      max-width: 420px;
+      border-radius: 8px;
+      border: 1px solid #dce3ec;
+      box-shadow: 0 4px 20px rgba(0, 33, 71, 0.08);
+      overflow: hidden;
+    }
+
+    .gate-header {
+      background: #002147;
+      padding: 28px 32px;
+      text-align: center;
+    }
+
+    .gate-header img {
+      height: 48px;
+      filter: brightness(0) invert(1);
+      margin-bottom: 14px;
+    }
+
+    .gate-header h1 {
+      color: white;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    .gate-header p {
+      color: rgba(255,255,255,0.75);
+      font-size: 13px;
+      margin-top: 6px;
+    }
+
+    .gate-body {
+      padding: 32px;
+    }
+
+    .gate-body label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #002147;
+      margin-bottom: 8px;
+    }
+
+    .gate-body input {
+      width: 100%;
+      padding: 13px 14px;
+      font-size: 15px;
+      border: 1px solid #c5d0de;
+      border-radius: 5px;
+      outline: none;
+      transition: border-color 0.15s;
+      letter-spacing: 0.5px;
+      text-align: center;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    .gate-body input:focus {
+      border-color: #002147;
+    }
+
+    .gate-body button {
+      width: 100%;
+      margin-top: 18px;
+      padding: 13px;
+      background: #002147;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    .gate-body button:hover {
+      background: #001a38;
+    }
+
+    #error {
+      margin-top: 14px;
+      font-size: 13.5px;
+      color: #c0392b;
+      text-align: center;
+      min-height: 20px;
+    }
+
+    .gate-footer {
+      text-align: center;
+      padding: 0 32px 24px;
+      font-size: 12px;
+      color: #7a8a9a;
+    }
+
+    /* ========== MAIN CONTENT (hidden by default) ========== */
+    #content {
+      display: none;
+    }
+
+    /* Top bar */
+    .top-bar {
+      background: #002147;
+      color: white;
+      padding: 14px 0;
+      font-size: 13px;
+    }
+
+    .top-bar-inner {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .top-bar a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+    }
+
+    header {
+      background: white;
+      border-bottom: 1px solid #dce3ec;
+      padding: 28px 0;
+    }
+
+    .header-inner {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .brand img {
+      height: 52px;
+      width: auto;
+    }
+
+    .brand-text {
+      font-size: 15px;
+      font-weight: 700;
+      color: #002147;
+      letter-spacing: 0.5px;
+      line-height: 1.25;
+    }
+
+    .brand-text span {
+      display: block;
+      font-size: 12px;
+      font-weight: 500;
+      color: #5a6a7a;
+      letter-spacing: 0.3px;
+      margin-top: 2px;
+    }
+
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 40px 24px 60px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #dce3ec;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,33,71,0.04);
+      overflow: hidden;
+    }
+
+    .card-header {
+      background: #f8fafc;
+      border-bottom: 1px solid #e5ebf2;
+      padding: 22px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .card-header h1 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #002147;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: #e8f5e9;
+      color: #1b5e20;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 4px;
+      border: 1px solid #c8e6c9;
+    }
+
+    .status-badge::before {
+      content: "✓";
+      font-weight: 700;
+    }
+
+    .card-body {
+      padding: 36px 32px 40px;
+    }
+
+    .intro {
+      font-size: 15px;
+      color: #4a5568;
+      max-width: 640px;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    .info-section {
+      margin-bottom: 28px;
+    }
+
+    .section-title {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #5a6a7a;
+      margin-bottom: 14px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #e5ebf2;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+
+    .info-item {
+      padding: 12px 0;
+      border-bottom: 1px solid #f0f3f7;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .info-item:nth-last-child(-n+2) {
+      border-bottom: none;
+    }
+
+    .info-label {
+      font-size: 12.5px;
+      color: #6b7c8f;
+      font-weight: 500;
+    }
+
+    .info-value {
+      font-size: 15px;
+      color: #1a1a1a;
+      font-weight: 500;
+    }
+
+    .info-value.highlight {
+      color: #002147;
+      font-weight: 600;
+    }
+
+    .info-item.full {
+      grid-column: 1 / -1;
+    }
+
+    .verification-box {
+      background: #f8fafc;
+      border: 1px solid #e5ebf2;
+      border-radius: 4px;
+      padding: 18px 20px;
+      margin-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .ver-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .ver-label {
+      font-size: 11.5px;
+      color: #6b7c8f;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .ver-value {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #002147;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    .disclaimer {
+      margin-top: 28px;
+      font-size: 12.5px;
+      color: #7a8a9a;
+      line-height: 1.55;
+      padding-top: 20px;
+      border-top: 1px solid #e5ebf2;
+    }
+
+    footer {
+      background: #002147;
+      color: rgba(255,255,255,0.85);
+      padding: 32px 0;
+      margin-top: 40px;
+    }
+
+    .footer-inner {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .footer-brand img {
+      height: 36px;
+      filter: brightness(0) invert(1);
+    }
+
+    .footer-brand-text {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .footer-brand-text span {
+      display: block;
+      font-size: 12px;
+      font-weight: 400;
+      opacity: 0.75;
+      margin-top: 2px;
+    }
+
+    .footer-links {
+      font-size: 13px;
+      text-align: right;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+    }
+
+    @media (max-width: 680px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 18px 20px;
+      }
+
+      .card-body {
+        padding: 28px 20px 32px;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .info-item:nth-last-child(-n+2) {
+        border-bottom: 1px solid #f0f3f7;
+      }
+
+      .info-item:last-child {
+        border-bottom: none;
+      }
+
+      .verification-box {
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-brand {
+        justify-content: center;
+      }
+
+      .footer-links {
+        text-align: center;
+      }
+    }
+  </style>
 </head>
-
 <body>
-<div id="gate">
-  <h1>Verification Code</h1>
 
-  <p>Enter your access key.</p>
+  <!-- ========== SECURITY GATE ========== -->
+  <div id="gate">
+    <div class="gate-card">
+      <div class="gate-header">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/AAU_logo_2012.png" alt="Aalborg University">
+        <h1>Student Record Verification</h1>
+        <p>Aalborg University · Academic Records</p>
+      </div>
 
-  <input
-    type="password"
-    id="key"
-    placeholder="XXXX-XXXX-XXXX-XXXX">
+      <div class="gate-body">
+        <label for="key">Access Key</label>
+        <input 
+          type="password" 
+          id="key" 
+          placeholder="XXXX-XXXX-XXXX-XXXX"
+          autocomplete="off"
+          spellcheck="false"
+        >
+        <button onclick="unlock()">Continue</button>
+        <div id="error"></div>
+      </div>
 
-  <button onclick="unlock()">
-    Continue
-  </button>
+      <div class="gate-footer">
+        Enter the access key provided to view the verified student record.
+      </div>
+    </div>
+  </div>
 
-  <div id="error"></div>
-</div>
-<div id="content">
-<header>
+  <!-- ========== PROTECTED CONTENT ========== -->
+  <div id="content">
 
-<div class="logo">
+    <div class="top-bar">
+      <div class="top-bar-inner">
+        <span>Aalborg University · Academic Records</span>
+        <a href="https://www.en.aau.dk" target="_blank">en.aau.dk</a>
+      </div>
+    </div>
 
-AALBORG<br>
+    <header>
+      <div class="header-inner">
+        <div class="brand">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/AAU_logo_2012.png" alt="Aalborg University">
+          <div class="brand-text">
+            AALBORG UNIVERSITY
+            <span>Academic Records System</span>
+          </div>
+        </div>
+      </div>
+    </header>
 
-UNIVERSITY
+    <div class="container">
+      <div class="card">
 
-</div>
+        <div class="card-header">
+          <h1>Student Record Verification</h1>
+          <div class="status-badge">Verified</div>
+        </div>
 
-<div class="tag">
+        <div class="card-body">
+          <p class="intro">
+            This page confirms that the student record below has been verified against the official academic records held by Aalborg University. The information corresponds to the diploma issued by the university.
+          </p>
 
-Excellence in research and education
+          <!-- Personal information -->
+          <div class="info-section">
+            <div class="section-title">Student Information</div>
+            <div class="info-grid">
+              <div class="info-item">
+                <span class="info-label">Full name</span>
+                <span class="info-value highlight">Rafal Allakhverdiev</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Student number</span>
+                <span class="info-value">202104578</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Date of birth</span>
+                <span class="info-value">26 February 1999</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Nationality</span>
+                <span class="info-value">Lithuanian</span>
+              </div>
+            </div>
+          </div>
 
-</div>
+          <!-- Programme information -->
+          <div class="info-section">
+            <div class="section-title">Programme & Degree</div>
+            <div class="info-grid">
+              <div class="info-item full">
+                <span class="info-label">Degree awarded</span>
+                <span class="info-value highlight">Bachelor of Science (BSc) in Engineering</span>
+              </div>
+              <div class="info-item full">
+                <span class="info-label">Specialisation</span>
+                <span class="info-value">Applied Industrial Electronics</span>
+              </div>
+              <div class="info-item full">
+                <span class="info-label">Danish title</span>
+                <span class="info-value">Bachelor (BSc) i Ingeniørvidenskab med speciale i Anvendt Industriel Elektronik</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Faculty</span>
+                <span class="info-value">Faculty of Engineering and Science</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Date awarded</span>
+                <span class="info-value">15 July 2023</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">ECTS credits</span>
+                <span class="info-value">180</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Academic standing</span>
+                <span class="info-value">Completed</span>
+              </div>
+            </div>
+          </div>
 
-</header>
+          <!-- Verification details -->
+          <div class="verification-box">
+            <div class="ver-item">
+              <span class="ver-label">Verification ID</span>
+              <span class="ver-value">AAU-VER-2026-001284</span>
+            </div>
+            <div class="ver-item">
+              <span class="ver-label">Certificate No.</span>
+              <span class="ver-value">BSC-AIE-2023-548219</span>
+            </div>
+            <div class="ver-item">
+              <span class="ver-label">Issued by</span>
+              <span class="ver-value">Office of Academic Records</span>
+            </div>
+          </div>
 
-<div class="wrapper">
+          <p class="disclaimer">
+            This verification is based on the official diploma issued by Aalborg University.  
+            For formal confirmation or additional documentation, please contact the Study Administration at Aalborg University.
+          </p>
+        </div>
+      </div>
+    </div>
 
-<div class="card">
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/AAU_logo_2012.png" alt="Aalborg University">
+          <div class="footer-brand-text">
+            Aalborg University
+            <span>Fredrik Bajers Vej 7K · 9220 Aalborg Ø · Denmark</span>
+          </div>
+        </div>
+        <div class="footer-links">
+          <a href="https://www.en.aau.dk" target="_blank">en.aau.dk</a>
+        </div>
+      </div>
+    </footer>
+  </div>
 
-<div class="uni">
+  <script>
+    const correctKey = "A8X4-K9Q2-M7P1-V6RD-T3LW";
 
-AALBORG UNIVERSITY
+    function unlock() {
+      const entered = document.getElementById("key").value.trim();
 
-</div>
-
-<div class="title">
-
-Verification
-
-</div>
-
-<div class="divider">
-
-<div class="dot"></div>
-
-</div>
-
-<div class="desc">
-
-This page allows you to verify that a diploma was issued by Aalborg University or that a student is affiliated with the university
-
-</div>
-
-<div class="success">
-
-<div class="check">
-
-✓
-
-</div>
-
-Verification successful.
-
-</div>
-
-<div class="line"></div>
-
-<div class="bottom">
-
-If you see this page, the verification was successful.<br>
-
-You can now close this window.
-
-</div>
-
-</div>
-
-</div>
-
-<footer>
-
-<div class="left">
-
-<h2>Aalborg University</h2>
-
-<p>
-
-Fredrik Bajers Vej 7K,<br>
-
-9220 Aalborg Ø, Denmark
-
-</p>
-
-</div>
-
-<div class="right">
-
-aalborguniversity.dk
-
-</div>
-
-</footer>
-<script>
-const correctKey = "A8X4-K9Q2-M7P1-V6RD-T3LW";
-
-function unlock() {
-    const entered = document.getElementById("key").value.trim();
-
-    if (entered === correctKey) {
+      if (entered === correctKey) {
         document.getElementById("gate").style.display = "none";
         document.getElementById("content").style.display = "block";
-        document.getElementById("error").innerHTML = "";
-    } else {
-        document.getElementById("error").innerHTML = "Invalid access key.";
+        document.getElementById("error").textContent = "";
+      } else {
+        document.getElementById("error").textContent = "Invalid access key. Please try again.";
+      }
     }
-}
-</script>
 
-</div>
+    // Allow pressing Enter
+    document.getElementById("key").addEventListener("keyup", function(e) {
+      if (e.key === "Enter") {
+        unlock();
+      }
+    });
+  </script>
+
 </body>
 </html>
