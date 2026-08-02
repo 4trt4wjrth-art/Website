@@ -1,10 +1,520 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Website</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Verification</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Inter,sans-serif;
+}
+
+body{
+
+background:#f6f7fb;
+color:#222;
+overflow-x:hidden;
+
+}
+
+/* Background */
+
+body:before{
+
+content:"";
+position:fixed;
+left:-300px;
+top:120px;
+width:700px;
+height:900px;
+
+background:
+radial-gradient(circle at left,#eceffc 0%,transparent 70%);
+
+opacity:.8;
+z-index:-2;
+
+}
+
+body:after{
+
+content:"";
+position:fixed;
+right:-300px;
+top:120px;
+width:700px;
+height:900px;
+
+background:
+radial-gradient(circle at right,#eceffc 0%,transparent 70%);
+
+opacity:.8;
+z-index:-2;
+
+}
+
+/* Header */
+
+header{
+
+height:110px;
+background:#11184b;
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+
+padding:0 70px;
+
+color:white;
+
+}
+
+.logo{
+
+font-size:20px;
+font-weight:800;
+
+letter-spacing:6px;
+line-height:1.4;
+
+}
+
+.tag{
+
+font-size:18px;
+font-weight:400;
+
+opacity:.95;
+
+}
+
+/* Card */
+
+.wrapper{
+
+padding:60px 20px;
+
+}
+
+.card{
+
+background:white;
+
+max-width:950px;
+
+margin:auto;
+
+padding:70px;
+
+border-radius:18px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+text-align:center;
+
+border:1px solid #e8ebf3;
+
+}
+
+.uni{
+
+font-size:20px;
+
+font-weight:700;
+
+letter-spacing:6px;
+
+color:#162057;
+
+margin-bottom:22px;
+
+}
+
+.title{
+
+font-size:72px;
+
+font-weight:800;
+
+color:#162057;
+
+margin-bottom:25px;
+
+}
+
+.divider{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+margin:25px 0 40px;
+
+}
+
+.divider:before,
+.divider:after{
+
+content:"";
+
+width:180px;
+
+height:2px;
+
+background:#1d2a73;
+
+}
+
+.dot{
+
+width:14px;
+
+height:14px;
+
+background:#1d2a73;
+
+border-radius:50%;
+
+margin:0 14px;
+
+}
+
+.desc{
+
+font-size:22px;
+
+line-height:1.7;
+
+max-width:700px;
+
+margin:auto;
+
+color:#444;
+
+margin-bottom:40px;
+
+}
+
+/* Success */
+
+.success{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:18px;
+
+background:#edf9ee;
+
+border:1px solid #d7ead8;
+
+padding:22px;
+
+border-radius:12px;
+
+font-size:28px;
+
+font-weight:600;
+
+color:#2b8a3e;
+
+max-width:620px;
+
+margin:auto;
+
+}
+
+.check{
+
+width:48px;
+
+height:48px;
+
+border-radius:50%;
+
+background:#2d8b3d;
+
+color:white;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:28px;
+
+font-weight:bold;
+
+}
+
+.line{
+
+margin:42px auto;
+
+height:1px;
+
+background:#ddd;
+
+width:620px;
+
+max-width:100%;
+
+}
+
+.bottom{
+
+font-size:22px;
+
+line-height:1.8;
+
+color:#444;
+
+}
+
+/* Footer */
+
+footer{
+
+margin-top:60px;
+
+background:#11184b;
+
+color:white;
+
+padding:38px 70px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:flex-end;
+
+flex-wrap:wrap;
+
+}
+
+.left h2{
+
+font-size:18px;
+
+margin-bottom:10px;
+
+}
+
+.left p{
+
+font-size:15px;
+
+opacity:.9;
+
+line-height:1.7;
+
+}
+
+.right{
+
+font-size:18px;
+
+font-weight:600;
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+header{
+
+padding:25px;
+
+height:auto;
+
+flex-direction:column;
+
+gap:12px;
+
+text-align:center;
+
+}
+
+.logo{
+
+font-size:16px;
+
+letter-spacing:4px;
+
+}
+
+.tag{
+
+font-size:14px;
+
+}
+
+.card{
+
+padding:40px 25px;
+
+}
+
+.title{
+
+font-size:46px;
+
+}
+
+.desc{
+
+font-size:18px;
+
+}
+
+.success{
+
+font-size:20px;
+
+padding:18px;
+
+}
+
+.bottom{
+
+font-size:18px;
+
+}
+
+footer{
+
+padding:30px;
+
+text-align:center;
+
+justify-content:center;
+
+gap:20px;
+
+}
+
+}
+
+</style>
+
 </head>
+
 <body>
-  <h1>Hello!</h1>
-  <p>My website is live.</p>
+
+<header>
+
+<div class="logo">
+
+AALBORG<br>
+
+UNIVERSITY
+
+</div>
+
+<div class="tag">
+
+Excellence in research and education
+
+</div>
+
+</header>
+
+<div class="wrapper">
+
+<div class="card">
+
+<div class="uni">
+
+AALBORG UNIVERSITY
+
+</div>
+
+<div class="title">
+
+Verification
+
+</div>
+
+<div class="divider">
+
+<div class="dot"></div>
+
+</div>
+
+<div class="desc">
+
+This page is used to verify that the domain is properly connected to Aalborg University.
+
+</div>
+
+<div class="success">
+
+<div class="check">
+
+✓
+
+</div>
+
+Verification successful.
+
+</div>
+
+<div class="line"></div>
+
+<div class="bottom">
+
+If you see this page, the verification was successful.<br>
+
+You can now close this window.
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+<div class="left">
+
+<h2>Aalborg University</h2>
+
+<p>
+
+Skjernvej 4A,<br>
+
+9220 Aalborg Ø, Denmark
+
+</p>
+
+</div>
+
+<div class="right">
+
+aalborguniversity.dk
+
+</div>
+
+</footer>
+
 </body>
+
 </html>
